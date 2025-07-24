@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Creates a cross-account IAM role for auditing IAM policies.
+
+Resources:
+  CrossAccountAuditRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CrossAccountAuditRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:
+                - arn:aws:iam::111111111111:assumed-role/CrossAccountAuditRole/IAMPolicyAuditSession
+                - arn:aws:iam::222222222222:assumed-role/CrossAccountAuditRole/IAMPolicyAuditSession
+                # Add arn of role assigned to logged user
+                # Add all accounts here
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:PrincipalOrgID: "o-----------"
+      Policies:
+        - PolicyName: CrossAccountPolicyScanner
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - iam:ListUsers
+                  - iam:GetUser
+                  - iam:ListAttachedUserPolicies
+                  - iam:ListUserPolicies
+                  - iam:GetUserPolicy
+                  - iam:GetPolicy
+                  - iam:GetPolicyVersion
+                  - iam:ListPolicyVersions
+                  - organizations:ListAccounts
+                  - sts:AssumeRole
+                Resource: "*"
