@@ -65,5 +65,6 @@ Full documentation and step-by-step guide:
 
 ✍️ Author
 
-Thangamani R — Cloud Engineer | AWS | Automation | Security Audit
+Thangamani R — Cloud Engineer | AWS | Azure | GCP | Automation | Security Audit | Devops
+
 Feel free to connect on www.linkedin.com/in/thangamani22
