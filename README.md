@@ -19,25 +19,6 @@ This project enables centralized auditing of IAM users and their policies across
 
 ---
 
-## 📁 Repository Structure
-
-aws-iam-audit/
-├── scripts/
-│ └── iam-user-audit.sh
-├── cloudformation/
-│ └── cross-account-audit-role.yaml
-├── output/
-│ └── *.json
-│ └── all_accounts_iam_users.csv
-├── README.md
-└── Documentation.md
-
-yaml
-Copy
-Edit
-
----
-
 ## ⚙️ Prerequisites
 
 - AWS Organization must be enabled
