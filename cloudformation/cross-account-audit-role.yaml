@@ -15,11 +15,12 @@ Resources:
                 - arn:aws:iam::111111111111:assumed-role/CrossAccountAuditRole/IAMPolicyAuditSession
                 - arn:aws:iam::222222222222:assumed-role/CrossAccountAuditRole/IAMPolicyAuditSession
                 # Add arn of role assigned to logged user
-                # Add all accounts here
+                # Add arn of all account's role here
             Action: sts:AssumeRole
             Condition:
               StringEquals:
                 aws:PrincipalOrgID: "o-----------"
+                #add Organization ID
       Policies:
         - PolicyName: CrossAccountPolicyScanner
           PolicyDocument:
