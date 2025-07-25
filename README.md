@@ -52,15 +52,18 @@ Fetch IAM user data and policies/
 Write output to output/ACCOUNT_ID.json and all_accounts_iam_users.csv
 
 
-🔐 Security Best Practices
+🔐 Security Best Practices:
+
 Apply least privilege principle to CrossAccountAuditRole.
 Limit trust to your org or audit accounts only.
 Avoid wildcard trust policies in production.
 
 🧠 Learn More
+
 Full documentation and step-by-step guide:
 📄 Documentation.md
 
 ✍️ Author
+
 Thangamani R — Cloud Engineer | AWS | Automation | Security Audit
 Feel free to connect on www.linkedin.com/in/thangamani22
